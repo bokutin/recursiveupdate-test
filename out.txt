@@ -1,0 +1,63 @@
+--> test[/root/recursiveupdate-test t/99_rel_naming.t] lib[DBIx-Class-ResultSet-RecursiveUpdate-0.34]
+cd /root/recursiveupdate-test; prove -I DBIx-Class-ResultSet-RecursiveUpdate-0.34/lib -v t/99_rel_naming.t
+t/99_rel_naming.t .. 
+ok 1 - M2MTest::Schema1(rel_name == fk naming) (tags => [ { id => ... } ]) m2m_force_set_rel => 1
+ok 2 - M2MTest::Schema1(rel_name == fk naming) (tags => [ { id => ... } ]) m2m_force_set_rel => 0
+ok 3 - M2MTest::Schema2(rel_name != fk naming) (tags => [ { id => ... } ]) m2m_force_set_rel => 1
+ok 4 - M2MTest::Schema2(rel_name != fk naming) (tags => [ { id => ... } ]) m2m_force_set_rel => 0
+1..4
+ok
+All tests successful.
+Files=1, Tests=4,  1 wallclock secs ( 0.02 usr  0.02 sys +  0.47 cusr  0.04 csys =  0.54 CPU)
+Result: PASS
+
+--> test[/root/recursiveupdate-test t/99_rel_naming.t] lib[DBIx-Class-ResultSet-RecursiveUpdate-0.40]
+cd /root/recursiveupdate-test; prove -I DBIx-Class-ResultSet-RecursiveUpdate-0.40/lib -v t/99_rel_naming.t
+
+#   Failed test 'M2MTest::Schema2(rel_name != fk naming) (tags => [ { id => ... } ]) m2m_force_set_rel => 0'
+#   at t/99_rel_naming.t line 47.
+# died: DBIx::Class::Exception (DBIx::Class::Storage::DBI::_dbh_execute(): DBI Exception: DBD::SQLite::st execute failed: UNIQUE constraint failed: dvd_tag.dvd_id, dvd_tag.tag_id [for Statement "INSERT INTO dvd_tag ( dvd_id, tag_id) VALUES ( ?, ? )" with ParamValues: 1=1, 2=1] at t/99_rel_naming.t line 37
+# )
+# Looks like you failed 1 test of 4.
+t/99_rel_naming.t .. 
+ok 1 - M2MTest::Schema1(rel_name == fk naming) (tags => [ { id => ... } ]) m2m_force_set_rel => 1
+ok 2 - M2MTest::Schema1(rel_name == fk naming) (tags => [ { id => ... } ]) m2m_force_set_rel => 0
+ok 3 - M2MTest::Schema2(rel_name != fk naming) (tags => [ { id => ... } ]) m2m_force_set_rel => 1
+not ok 4 - M2MTest::Schema2(rel_name != fk naming) (tags => [ { id => ... } ]) m2m_force_set_rel => 0
+1..4
+Dubious, test returned 1 (wstat 256, 0x100)
+Failed 1/4 subtests 
+
+Test Summary Report
+-------------------
+t/99_rel_naming.t (Wstat: 256 Tests: 4 Failed: 1)
+  Failed test:  4
+  Non-zero exit status: 1
+Files=1, Tests=4,  1 wallclock secs ( 0.02 usr  0.01 sys +  0.50 cusr  0.05 csys =  0.57 CPU)
+Result: FAIL
+
+--> test[/root/recursiveupdate-test t/99_rel_naming.t] lib[DBIx-Class-ResultSet-RecursiveUpdate-0.41]
+cd /root/recursiveupdate-test; prove -I DBIx-Class-ResultSet-RecursiveUpdate-0.41/lib -v t/99_rel_naming.t
+
+#   Failed test 'M2MTest::Schema2(rel_name != fk naming) (tags => [ { id => ... } ]) m2m_force_set_rel => 0'
+#   at t/99_rel_naming.t line 47.
+# died: DBIx::Class::Exception (DBIx::Class::Storage::DBI::_dbh_execute(): DBI Exception: DBD::SQLite::st execute failed: UNIQUE constraint failed: dvd_tag.dvd_id, dvd_tag.tag_id [for Statement "INSERT INTO dvd_tag ( dvd_id, tag_id) VALUES ( ?, ? )" with ParamValues: 1=1, 2=1] at t/99_rel_naming.t line 37
+# )
+# Looks like you failed 1 test of 4.
+t/99_rel_naming.t .. 
+ok 1 - M2MTest::Schema1(rel_name == fk naming) (tags => [ { id => ... } ]) m2m_force_set_rel => 1
+ok 2 - M2MTest::Schema1(rel_name == fk naming) (tags => [ { id => ... } ]) m2m_force_set_rel => 0
+ok 3 - M2MTest::Schema2(rel_name != fk naming) (tags => [ { id => ... } ]) m2m_force_set_rel => 1
+not ok 4 - M2MTest::Schema2(rel_name != fk naming) (tags => [ { id => ... } ]) m2m_force_set_rel => 0
+1..4
+Dubious, test returned 1 (wstat 256, 0x100)
+Failed 1/4 subtests 
+
+Test Summary Report
+-------------------
+t/99_rel_naming.t (Wstat: 256 Tests: 4 Failed: 1)
+  Failed test:  4
+  Non-zero exit status: 1
+Files=1, Tests=4,  1 wallclock secs ( 0.03 usr  0.00 sys +  0.46 cusr  0.05 csys =  0.55 CPU)
+Result: FAIL
+
